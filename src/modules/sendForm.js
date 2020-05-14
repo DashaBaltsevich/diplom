@@ -1,6 +1,6 @@
 const sendForm = (form) => {
-    const errorMessage = 'Что-то пошло не так',
-        loadMessage = 'Загрузка...',
+    const errorMessage = 'Ошибка',
+        loadMessage = 'Идет отправка...',
         successMessage = 'Спасибо! Мы скоро с вами свяжемся!';
 
     const statusMessage = document.createElement('div');
@@ -52,6 +52,27 @@ const sendForm = (form) => {
 
 
     });
+
+        //ввод цифр и +
+
+        const phoneUser = document.querySelectorAll('.phone-user'),
+            userName = document.querySelectorAll('[name = "user_name"]');
+
+        phoneUser.forEach(function (e) {
+                e.addEventListener('input', function (e) {
+                    e.target.value = e.target.value.replace(/[^\+\d]/gi, '');
+                });
+            
+        });
+
+        //ввод кириллицы
+
+        userName.forEach(function (e) {
+                e.addEventListener('input', function (e) {
+                    e.target.value = e.target.value.replace(/[^а-яё]/ig,'');
+                });
+            
+        }); 
 
     
 
