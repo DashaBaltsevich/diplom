@@ -1,5 +1,6 @@
 const popUp = (btn, pop) => {
         btn.addEventListener('click', () => {
+            event.preventDefault();
             pop.style.opacity = 0;
                 let count = 0;
                 count = +0.01;

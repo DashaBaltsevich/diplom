@@ -32,7 +32,6 @@ const mainForm = document.querySelector('.main-form'),
 
 const forms = document.querySelectorAll('form');
 
-console.log(forms);
     
 
 import sendForm from './modules/sendForm';

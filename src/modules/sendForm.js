@@ -1,7 +1,9 @@
 const sendForm = (form) => {
     const errorMessage = 'Ошибка',
         loadMessage = 'Идет отправка...',
-        successMessage = 'Спасибо! Мы скоро с вами свяжемся!';
+        successMessage = 'Спасибо! Мы скоро с вами свяжемся!',
+        inputQuestion = document.querySelector('[name = "user_quest"]');
+
 
     const statusMessage = document.createElement('div');
     statusMessage.style.cssText = 'font-size: 2rem;';
@@ -12,6 +14,7 @@ const sendForm = (form) => {
         event.preventDefault();
         form.appendChild(statusMessage);
         statusMessage.textContent = loadMessage;
+
         
         const formData = new FormData(form);
 
@@ -20,8 +23,13 @@ const sendForm = (form) => {
             body[key] = val;
         });
 
-        const postData = (body) => {
+        if (inputQuestion.value){
+            body.inputQuestion = inputQuestion.value;
+        }
 
+        inputQuestion.value = '';
+
+        const postData = (body) => {
             return fetch('./server.php', {
                 method: 'POST',
                 headers: {
@@ -49,6 +57,8 @@ const sendForm = (form) => {
             statusMessage.textContent = errorMessage;
             console.error(error);
         });
+
+        
 
 
     });
