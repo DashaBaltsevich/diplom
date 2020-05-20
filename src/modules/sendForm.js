@@ -9,6 +9,8 @@ const sendForm = (form) => {
     statusMessage.style.cssText = 'font-size: 2rem;';
     statusMessage.style.color = "#000000";
 
+    form.setAttribute('novalidate', '');
+
     form.addEventListener('submit', (event) => {
         //чтобы страница не перезагружалась
         event.preventDefault();

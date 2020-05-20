@@ -27,7 +27,7 @@ const calc = (price = 10000) => {
             checkbox2, diameterValueNum, colValueNum, diameter2ValueNum, col2ValueNum;
         const inputDist = document.querySelector('.panel-body > input');
         const formDiscount = document.querySelector('.form-discount');
-        console.log(formDiscount);
+        formDiscount.setAttribute('novalidate', '');
 
     const clearInput = () => {
         document.querySelectorAll('input').forEach((item) => {

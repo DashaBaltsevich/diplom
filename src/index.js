@@ -26,10 +26,10 @@ accordion();
 calc();
 
 const mainForm = document.querySelector('.main-form'),
-    captureForm1 = document.querySelector('.capture-form')[0],
-    captureForm2 = document.querySelector('.capture-form')[1],
-    captureForm4 = document.querySelector('.capture-form')[3],
-    captureForm5 = document.querySelector('.capture-form')[4],
+    captureForm1 = document.querySelectorAll('form.capture-form')[0],
+    captureForm2 = document.querySelectorAll('form.capture-form')[1],
+    captureForm4 = document.querySelectorAll('form.capture-form')[3],
+    captureForm5 = document.querySelectorAll('form.capture-form')[4],
     directorForm = document.querySelector('.director-form');
     sendForm(mainForm);
     sendForm(captureForm1);
