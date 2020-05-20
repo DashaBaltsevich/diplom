@@ -26,7 +26,8 @@ const calc = (price = 10000) => {
             col2Value,
             checkbox2, diameterValueNum, colValueNum, diameter2ValueNum, col2ValueNum;
         const inputDist = document.querySelector('.panel-body > input');
-        const form = document.querySelector('.form-discount');
+        const formDiscount = document.querySelector('.form-discount');
+        console.log(formDiscount);
 
     const clearInput = () => {
         document.querySelectorAll('input').forEach((item) => {
@@ -225,12 +226,12 @@ const calc = (price = 10000) => {
 
             
         
-            form.addEventListener('submit', (event) => {
+            formDiscount.addEventListener('submit', (event) => {
                 //чтобы страница не перезагружалась
                 event.preventDefault();
-                form.appendChild(statusMessage);
+                formDiscount.appendChild(statusMessage);
                 statusMessage.textContent = loadMessage;
-                const formData = new FormData(form);
+                const formData = new FormData(formDiscount);
                 
         
                 let body = {};
@@ -268,7 +269,7 @@ const calc = (price = 10000) => {
                     setTimeout(() => {
                         statusMessage.textContent = '';
                     }, 5000);
-                    const inputs = form.querySelectorAll('input');
+                    const inputs = formDiscount.querySelectorAll('input');
                 inputs.forEach((elem) => {
                     elem.value = '';
                 });

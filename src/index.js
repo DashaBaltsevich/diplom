@@ -26,10 +26,17 @@ accordion();
 calc();
 
 const mainForm = document.querySelector('.main-form'),
-    captureForm = document.querySelector('.capture-form'),
-    directorForm = document.querySelector('.director-form'),
-    forms = document.querySelectorAll('form');
+    captureForm1 = document.querySelector('.capture-form')[0],
+    captureForm2 = document.querySelector('.capture-form')[1],
+    captureForm4 = document.querySelector('.capture-form')[3],
+    captureForm5 = document.querySelector('.capture-form')[4],
+    directorForm = document.querySelector('.director-form');
+    sendForm(mainForm);
+    sendForm(captureForm1);
+    sendForm(directorForm);
+    sendForm(captureForm2);
+    sendForm(captureForm4);
+    sendForm(captureForm5);
 
-forms.forEach((el) => {
-    sendForm(el);
-});
+
+
