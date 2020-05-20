@@ -231,6 +231,7 @@ const calc = (price = 10000) => {
                 form.appendChild(statusMessage);
                 statusMessage.textContent = loadMessage;
                 const formData = new FormData(form);
+                
         
                 let body = {};
                 body.resultSum = resultSum;
