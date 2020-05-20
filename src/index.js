@@ -1,10 +1,13 @@
 'use strict';
-const callBtn = document.querySelector('.call-btn'),
+const callBtn = document.querySelectorAll('a.call-btn')[0],
+callBtn2 = document.querySelectorAll('a.call-btn')[1],
     popup = document.querySelector('.popup-call'),
     checkBtn = document.querySelector('.check-btn'),
     popupCheck = document.querySelector('.popup-check'),
     consultationBtn = document.querySelector('.consultation-btn'),
     popupConsultation = document.querySelector('.popup-consultation');
+
+
 
 import popUp from './modules/popUp';
 import popUpDiscount from './modules/popUpDiscount';
@@ -14,6 +17,7 @@ import sendForm from './modules/sendForm';
 import calc from './modules/calc';
 
 popUp(callBtn, popup);
+popUp(callBtn2, popup);
 
 popUp(checkBtn, popupCheck);
 
